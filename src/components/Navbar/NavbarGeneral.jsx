@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom"
 import logo from "../../assets/logo-transparent-png.png"
 
-const Navbar = () => {
+const NavbarGeneral = () => {
     const navLinks = <>
     <li><NavLink to="/">Home</NavLink></li>
     <li><NavLink to="/addProduct">Add Product</NavLink></li>
     <li><NavLink to="/myCart">My Cart</NavLink></li>
     </>
   return (
-    <div className="absolute navbar z-[100]">
+    <div className="navbar">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,11 +19,13 @@ const Navbar = () => {
       </ul>
     </div>
     
-        <img className="w-20 md:w-24" src={logo} alt="" />
+       <div className="bg-base-300 rounded-lg">
+       <img className="w-20" src={logo} alt="" />
+       </div>
    
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 text-white">
+    <ul className="menu menu-horizontal px-1 ">
      {navLinks}
     </ul>
   </div>
@@ -34,5 +36,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
- 
+export default NavbarGeneral

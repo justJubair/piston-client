@@ -6,9 +6,9 @@ const Banner = () => {
     <div>
      
       <div className="h-screen">
-      <video className="h-full w-full object-cover" src={bannerVideo} muted loop autoPlay></video>
+      {/* <video className="h-full w-full object-cover" src={bannerVideo} muted loop autoPlay></video> */}
       </div>
-      <div className="h-screen w-full absolute top-0 left-0 bg-black/50">
+      <div className="h-screen w-full absolute top-0 left-0 bg-black/75">
       </div>
       <BannerContent/>
     </div>
