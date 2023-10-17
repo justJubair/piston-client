@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-
+import logo from "../../assets/logo-transparent-png.png"
 
 const Navbar = () => {
     const navLinks = <>
@@ -8,7 +8,7 @@ const Navbar = () => {
     <li><NavLink to="/myCart">My Cart</NavLink></li>
     </>
   return (
-    <div className="navbar bg-base-100">
+    <div className="absolute navbar z-[100]">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -18,15 +18,17 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    
+        <img className="w-24" src={logo} alt="" />
+   
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 text-white">
      {navLinks}
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a className="btn">Login</a>
   </div>
 </div>
   )
