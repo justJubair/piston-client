@@ -19,7 +19,7 @@ const Navbar = () => {
       </ul>
     </div>
     
-        <img className="w-24" src={logo} alt="" />
+        <img className="w-20 md:w-24" src={logo} alt="" />
    
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -28,7 +28,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Login</a>
+    <a className="btn btn-sm md:btn">Login</a>
   </div>
 </div>
   )
