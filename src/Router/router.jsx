@@ -6,6 +6,7 @@ import MyCart from "../pages/MyCart/MyCart";
 import BrandPage from "../pages/BrandPage/BrandPage";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/lamborghini",
-        loader: () => fetch("http://localhost:5000/lambo"),
+        loader: () => fetch("http://localhost:5000/lamborghini"),
         element: <BrandPage />,
       },
       {
@@ -51,12 +52,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/mercedes",
-        loader: () => fetch("http://localhost:5000/benz"),
+        loader: () => fetch("http://localhost:5000/marcedes"),
         element: <BrandPage />,
       },
       {
-        path: "/details/:id",
-        loader: () => fetch("http://localhost:5000/tesla"),
+        path: "/TeslaDetails/:id",
         element: <DetailsPage/>
       },
     ],

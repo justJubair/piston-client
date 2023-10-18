@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
-  
+
   return (  
       <div className="card mb-8 lg:card-side bg-base-100 shadow-xl">
         <figure>
@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
           </div>
           <p className="text-gray-500"><span className="font-semibold">Price:</span> ${product.price}</p>
           <div className="card-actions justify-end">
-            <Link to={`/details/${product.id}`}><button className="btn bg-orange-800 text-white">Details</button></Link>
+            <Link to={`/TeslaDetails/${product.id}`} state={product.brand}><button className="btn bg-orange-800 text-white">Details</button></Link>
             <button className="btn bg-orange-800 text-white">Update</button>
           </div>
         </div>

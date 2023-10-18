@@ -9,7 +9,7 @@ const BrandPage = () => {
       <h1>tesla</h1>
       <div>
         {
-          products.map(product => <ProductCard key={product.id} product={product} />)
+          products.map(product => <ProductCard products={products} key={product.id} product={product} />)
         }
       </div>
     </div>
