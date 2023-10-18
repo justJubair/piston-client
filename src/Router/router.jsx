@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/tesla",
+        loader:()=> fetch("http://localhost:5000/tesla"),
         element: <TeslaPage />,
       },
       {
