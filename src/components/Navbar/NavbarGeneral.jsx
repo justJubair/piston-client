@@ -30,7 +30,7 @@ const NavbarGeneral = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn btn-sm md:btn">Login</a>
+    <a className="btn btn-sm md:bg-orange-800 md:text-white md:btn">Login</a>
   </div>
 </div>
   )
