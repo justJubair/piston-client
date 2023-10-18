@@ -2,11 +2,38 @@ import { NavLink } from "react-router-dom"
 import logo from "../../assets/logo-transparent-png.png"
 
 const NavbarGeneral = () => {
-    const navLinks = <>
-    <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/addProduct">Add Product</NavLink></li>
-    <li><NavLink to="/myCart">My Cart</NavLink></li>
-    </>
+    const navLinks =  <>
+    <li>
+      <NavLink
+        to="/"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "bg-orange-800 text-white" : ""
+        }
+      >
+        Home
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        to="/addProduct"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "bg-orange-800 text-white" : ""
+        }
+      >
+        Add Product
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        to="/myCart"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "bg-orange-800 text-white" : ""
+        }
+      >
+        My Cart
+      </NavLink>
+    </li>
+  </>
   return (
     <div className="navbar">
   <div className="navbar-start">

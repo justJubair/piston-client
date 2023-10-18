@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import NavbarGeneral from "../../components/Navbar/NavbarGeneral";
+import Rating from "react-rating";
 
 const AddProduct = () => {
   const [type, setType] = useState(null);
@@ -27,9 +29,6 @@ const AddProduct = () => {
   };
   const handleTypeChange = (e) => {
     setType(e.target.value);
-  };
-  const handleRatingChange = (e) => {
-    setRating(e.target.value);
   };
   return (
     <div>
@@ -138,7 +137,12 @@ const AddProduct = () => {
             ></textarea>
           </div>
 
-          <div onChange={handleRatingChange} className="rating">
+          <Rating
+        onChange={(rate)=> setRating(rate)}
+          emptySymbol={<AiOutlineStar size={20}/>}
+          fullSymbol={<AiFillStar size={20} className="text-orange-800"/>}
+        />
+          {/* <div onChange={handleRatingChange} className="rating">
             <label className="mr-4 font-medium  text-gray-900" htmlFor="rating">
               Rating
             </label>
@@ -172,7 +176,7 @@ const AddProduct = () => {
               name="rating-1"
               className="mask mask-star bg-orange-800"
             />
-          </div>
+          </div> */}
 
           <button
             type="submit"
