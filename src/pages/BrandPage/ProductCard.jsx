@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
 
   return (  
-      <div className="card mb-8 lg:card-side bg-base-100 shadow-xl">
-        <figure>
+      <div className="card w-full mb-8 lg:card-side bg-base-100 shadow-xl">
+        <figure className="lg:w-1/2">
           <img
-            className="md:w-96 md:h-64"
+            className="w-full object-cover  md:h-64"
             src={product.img}
             alt={product.name}
           />
@@ -51,7 +51,7 @@ const ProductCard = ({ product }) => {
           <p className="text-gray-500"><span className="font-semibold">Price:</span> ${product.price}</p>
           <div className="card-actions justify-end">
             <Link to={`/detailsPage/${product._id}`} state={product.brand}><button className="btn bg-orange-800 text-white">Details</button></Link>
-            <button className="btn bg-orange-800 text-white">Update</button>
+            <Link to={`/updateProduct/${product._id}`} className="btn bg-orange-800 text-white">Update</Link>
           </div>
         </div>
       </div>

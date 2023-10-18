@@ -89,6 +89,8 @@ const MyCartCard = ({ product, products, setProducts }) => {
 
 MyCartCard.propTypes = {
   product: PropTypes.object,
+  products: PropTypes.array,
+  setProducts: PropTypes.func
 };
 
 export default MyCartCard;
