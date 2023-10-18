@@ -3,6 +3,12 @@ import Root from "../Root/Root";
 import Home from "../pages/Home/Home";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import MyCart from "../pages/MyCart/MyCart";
+import TeslaPage from "../pages/TeslaPage/TeslaPage";
+import McLarenPage from "../pages/McLarenPage/McLarenPage";
+import LamboPage from "../pages/LamboPage/LamboPage";
+import FerrariPage from "../pages/FerrariPage/FerrariPage";
+import BMWpage from "../pages/BMWpage/BMWpage";
+import MercedesPage from "../pages/MercedesPage/MercedesPage";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: ()=> fetch("http://localhost:5000/brands"),
+        loader: () => fetch("http://localhost:5000/brands"),
         element: <Home />,
       },
       {
@@ -20,8 +26,32 @@ const router = createBrowserRouter([
       },
       {
         path: "/myCart",
-        element: <MyCart/>
+        element: <MyCart />,
       },
+      {
+        path: "/tesla",
+        element: <TeslaPage />,
+      },
+      {
+        path: "/mclaren",
+        element: <McLarenPage/>
+      },
+      {
+        path: "/lamborghini",
+        element: <LamboPage/>
+      },
+      {
+        path: "/ferrari",
+        element: <FerrariPage/>
+      },
+      {
+        path: "/bmw",
+        element: <BMWpage/>
+      },
+      {
+        path: "/mercedes",
+        element: <MercedesPage/>
+      }
     ],
   },
 ]);
