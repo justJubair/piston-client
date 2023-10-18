@@ -9,6 +9,7 @@ import LamboPage from "../pages/LamboPage/LamboPage";
 import FerrariPage from "../pages/FerrariPage/FerrariPage";
 import BMWpage from "../pages/BMWpage/BMWpage";
 import MercedesPage from "../pages/MercedesPage/MercedesPage";
+import DetailsPage from "../pages/DetailsPage/DetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -30,29 +31,34 @@ const router = createBrowserRouter([
       },
       {
         path: "/tesla",
-        loader:()=> fetch("http://localhost:5000/tesla"),
+        loader: () => fetch("http://localhost:5000/tesla"),
         element: <TeslaPage />,
       },
       {
         path: "/mclaren",
-        element: <McLarenPage/>
+        element: <McLarenPage />,
       },
       {
         path: "/lamborghini",
-        element: <LamboPage/>
+        element: <LamboPage />,
       },
       {
         path: "/ferrari",
-        element: <FerrariPage/>
+        element: <FerrariPage />,
       },
       {
         path: "/bmw",
-        element: <BMWpage/>
+        element: <BMWpage />,
       },
       {
         path: "/mercedes",
-        element: <MercedesPage/>
-      }
+        element: <MercedesPage />,
+      },
+      {
+        path: "/details/:id",
+        loader: () => fetch("http://localhost:5000/tesla"),
+        element: <DetailsPage/>
+      },
     ],
   },
 ]);

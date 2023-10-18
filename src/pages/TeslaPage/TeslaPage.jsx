@@ -3,7 +3,7 @@ import TeslaCard from "./TeslaCard";
 
 const TeslaPage = () => {
   const products = useLoaderData();
-  console.log(products)
+
   return (
     <div>
       <h1>tesla</h1>
