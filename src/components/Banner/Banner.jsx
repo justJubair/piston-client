@@ -1,4 +1,4 @@
-import bannerVideo from "../../assets/bannerCars.mp4"
+// import bannerVideo from "../../assets/bannerCars.mp4"
 import BannerContent from "./BannerContent";
 
 const Banner = () => {

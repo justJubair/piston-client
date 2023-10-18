@@ -6,12 +6,12 @@ import BrandCard from "../../components/BrandCard/BrandCard"
 
 const Home = () => {
   const brands = useLoaderData()
-  console.log(brands)
+
   return (
     <div>
       <Navbar/>
       <Banner/>
-      <div>
+      <div className="max-w-screen-lg mx-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {
           brands.map(brand=> <BrandCard key={brand._id} brand={brand}/>)
         }

@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom"
 import logo from "../../assets/logo-transparent-png.png"
 
+
 const Navbar = () => {
     const navLinks = <>
     <li><NavLink to="/">Home</NavLink></li>
     <li><NavLink to="/addProduct">Add Product</NavLink></li>
     <li><NavLink to="/myCart">My Cart</NavLink></li>
     </>
+
   return (
     <div className="absolute navbar z-[100]">
   <div className="navbar-start">
@@ -28,7 +30,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn btn-sm md:btn">Login</a>
+    <a className="btn btn-sm border-none md:text-white md:bg-orange-800 md:btn">Login</a>
   </div>
 </div>
   )
