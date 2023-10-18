@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-const TeslaCard = ({ product }) => {
+const ProductCard = ({ product }) => {
   
   return (  
       <div className="card mb-8 lg:card-side bg-base-100 shadow-xl">
@@ -14,11 +14,11 @@ const TeslaCard = ({ product }) => {
         <div className="card-body">
           <h2 className="card-title">{product.name}</h2>
           <p className="text-gray-500">
-            <span className="font-semibold">Brand:</span>
+            <span className="font-semibold">Brand: </span>
             {product.brand}
           </p>
           <p className="text-gray-500">
-            <span className="font-semibold">Type:</span>
+            <span className="font-semibold">Type: </span>
             {product.type}
           </p>
           <div className="rating my-2">
@@ -59,8 +59,8 @@ const TeslaCard = ({ product }) => {
   );
 };
 
-TeslaCard.propTypes = {
+ProductCard.propTypes = {
   product: PropTypes.object,
 };
 
-export default TeslaCard;
+export default ProductCard;

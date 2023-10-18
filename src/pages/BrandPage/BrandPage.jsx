@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom"
-import TeslaCard from "./TeslaCard";
+import ProductCard from "./ProductCard";
 
-const TeslaPage = () => {
+const BrandPage = () => {
   const products = useLoaderData();
 
   return (
@@ -9,11 +9,11 @@ const TeslaPage = () => {
       <h1>tesla</h1>
       <div>
         {
-          products.map(product => <TeslaCard key={product.id} product={product} />)
+          products.map(product => <ProductCard key={product.id} product={product} />)
         }
       </div>
     </div>
   )
 }
 
-export default TeslaPage
+export default BrandPage

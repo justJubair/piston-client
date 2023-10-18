@@ -3,12 +3,7 @@ import Root from "../Root/Root";
 import Home from "../pages/Home/Home";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import MyCart from "../pages/MyCart/MyCart";
-import TeslaPage from "../pages/TeslaPage/TeslaPage";
-import McLarenPage from "../pages/McLarenPage/McLarenPage";
-import LamboPage from "../pages/LamboPage/LamboPage";
-import FerrariPage from "../pages/FerrariPage/FerrariPage";
-import BMWpage from "../pages/BMWpage/BMWpage";
-import MercedesPage from "../pages/MercedesPage/MercedesPage";
+import BrandPage from "../pages/BrandPage/BrandPage";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 
 const router = createBrowserRouter([
@@ -32,27 +27,32 @@ const router = createBrowserRouter([
       {
         path: "/tesla",
         loader: () => fetch("http://localhost:5000/tesla"),
-        element: <TeslaPage />,
+        element: <BrandPage />,
       },
       {
         path: "/mclaren",
-        element: <McLarenPage />,
+        loader: () => fetch("http://localhost:5000/mclaren"),
+        element: <BrandPage />,
       },
       {
         path: "/lamborghini",
-        element: <LamboPage />,
+        loader: () => fetch("http://localhost:5000/lambo"),
+        element: <BrandPage />,
       },
       {
         path: "/ferrari",
-        element: <FerrariPage />,
+        loader: () => fetch("http://localhost:5000/ferrari"),
+        element: <BrandPage />,
       },
       {
         path: "/bmw",
-        element: <BMWpage />,
+        loader: () => fetch("http://localhost:5000/bmw"),
+        element: <BrandPage />,
       },
       {
         path: "/mercedes",
-        element: <MercedesPage />,
+        loader: () => fetch("http://localhost:5000/benz"),
+        element: <BrandPage />,
       },
       {
         path: "/details/:id",
