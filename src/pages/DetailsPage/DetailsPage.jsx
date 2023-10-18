@@ -1,38 +1,49 @@
-import { useEffect, useState } from "react"
-import { useLocation, useParams } from "react-router-dom"
-
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const DetailsPage = () => {
-  const [data, setData] = useState([])
-  const loc = useLocation()
-  console.log(loc.state)
-  useEffect(()=>{
-    fetch(`http://localhost:5000/${loc.state}`)
-    .then(res=> res.json())
-    .then(data =>{
-      setData(data)
+  const product = useLoaderData();
+
+  const handleAddToCart = ()=>{
+    fetch("http://localhost:5000/myCart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(product) 
     })
-  },[loc.state])
-    const {id} = useParams()
-    const idInt = parseInt(id)
-    // const data = useLoaderData()
-    const selectedProduct = data.find(product => product.id === idInt)
-    
+    .then(res=> res.json())
+    .then(data=>{
+      console.log(data)
+      if(data.insertedId){
+
+        Swal.fire(
+          'Success!',
+          'Product added successfully!',
+          'success'
+        )
+      }
+    })
+  }
   return (
     <div className="max-w-screen-lg mx-auto px-4">
-     <div className="card w-full lg:w-1/2 mx-auto">
-  <figure><img src={selectedProduct?.img} alt="car!"/></figure>
-  <div className="card-body">
-    <h2 className="card-title">{selectedProduct?.name}</h2>
-    <p>{selectedProduct?.description}</p>
-    <p>Manufacture Year : {selectedProduct?.manufacture_year}</p>
-    <div className="card-actions justify-end">
-      <button className="btn bg-orange-800 text-white">Add to cart</button>
+      <div className="card w-full lg:w-1/2 mx-auto">
+        <figure>
+          <img src={product?.img} alt="car!" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{product?.name}</h2>
+          <p>{product?.description}</p>
+          <p>Manufacture Year : {product?.manufacture_year}</p>
+          <div className="card-actions justify-end">
+            <button onClick={handleAddToCart} className="btn bg-orange-800 text-white">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    </div>
-  )
-}
+  );
+};
 
-export default DetailsPage
+export default DetailsPage;

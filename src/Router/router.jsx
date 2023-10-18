@@ -56,7 +56,8 @@ const router = createBrowserRouter([
         element: <BrandPage />,
       },
       {
-        path: "/TeslaDetails/:id",
+        path: "/detailsPage/:id",
+        loader: ({params})=> fetch(`http://localhost:5000/products/${params.id}`),
         element: <DetailsPage/>
       },
     ],

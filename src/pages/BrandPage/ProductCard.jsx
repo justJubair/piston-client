@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
           </div>
           <p className="text-gray-500"><span className="font-semibold">Price:</span> ${product.price}</p>
           <div className="card-actions justify-end">
-            <Link to={`/TeslaDetails/${product.id}`} state={product.brand}><button className="btn bg-orange-800 text-white">Details</button></Link>
+            <Link to={`/detailsPage/${product._id}`} state={product.brand}><button className="btn bg-orange-800 text-white">Details</button></Link>
             <button className="btn bg-orange-800 text-white">Update</button>
           </div>
         </div>
