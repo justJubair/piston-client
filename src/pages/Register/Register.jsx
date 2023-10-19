@@ -1,13 +1,44 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import NavbarGeneral from "../../components/Navbar/NavbarGeneral"
+import useAuth from "../../hooks/useAuth"
+import toast from "react-hot-toast"
 
 const Register = () => {
+    const {createUser} = useAuth()
+    const navigate = useNavigate()
+    const handleRegister =e=>{
+        e.preventDefault()
+        const form = e.target;
+        const name = form.name.value
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        if(password.length < 6){
+            return toast.error("Password must be at least six characters or longer")
+        }
+        if(!/[A-Z]/.test(password)){
+            return toast.error("Password must have at least one capital letter")
+        }
+        if(!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
+            return toast.error("Password must have at least one special character")
+        }
+        createUser(email, password)
+        .then(()=>{
+            toast.success('Registered Successfully!')
+            navigate("/")
+        })
+        .catch(error=>{
+            toast.error(error.message)
+        })
+       
+        
+    } 
   return (
     <div>
       <NavbarGeneral />
       <div className="flex justify-center my-9">
         <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-          <form className="space-y-6" action="#">
+          <form onSubmit={handleRegister} className="space-y-6" action="#">
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">
                 Register in to our platform
             </h5>
