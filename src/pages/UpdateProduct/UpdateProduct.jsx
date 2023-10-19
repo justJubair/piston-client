@@ -7,18 +7,27 @@ import Rating from "react-rating";
 
 const UpdateProduct = () => {
     const product = useLoaderData();
-    const [newType, setNewType] = useState(null)
-    const [newRating, setNewRating] = useState(null)
     const {brand, description, img, name, price, rating, type} = product
+    const [newBrand, setNewBrand] = useState(brand)
+    const [newRating, setNewRating] = useState(null)
   
     const handleUpdateProduct = e=>{
         e.preventDefault()
-    }
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const type = form.type.value;
+        const price = form.price.value;
+        const description = form.description.value;
+        const updatedProduct = { name, photo, type, price, newBrand, description, newRating };
 
-    const handleTypeChange = e =>{
-        setNewType(e.target.value)
+        console.log(updatedProduct)
     }
-    console.log(newType)
+    
+
+    const handleBrandChange = e =>{
+        setNewBrand(e.target.value)
+    }
   return (
     <div>
     <NavbarGeneral />
@@ -70,7 +79,7 @@ const UpdateProduct = () => {
           </label>
           <input
             type="text"
-            name="brand"
+            name="type"
             id="brand"
             defaultValue={type}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white mb-8 md:mb-0"
@@ -79,7 +88,7 @@ const UpdateProduct = () => {
           />
         </div>
           <label className="mr-4" htmlFor="productType">Brand</label>
-        <select onChange={handleTypeChange} defaultValue={brand} className="select select-ghost w-full max-w-xs">
+        <select onChange={handleBrandChange} defaultValue={brand} className="select select-ghost w-full max-w-xs">
           <option value="DEFAULT"  disabled>Please select a brand</option>
           <option value={"Tesla"}>Tesla</option>
           <option value={"McLaren"}>McLaren</option>
@@ -119,7 +128,7 @@ const UpdateProduct = () => {
         onChange={(rate)=> setNewRating(rate)}
           emptySymbol={<AiOutlineStar size={20}/>}
           fullSymbol={<AiFillStar size={20} className="text-orange-800"/>}
-          initialRating={product.rating}
+          initialRating={rating}
         />
         
 

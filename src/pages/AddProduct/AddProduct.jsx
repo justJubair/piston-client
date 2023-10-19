@@ -4,14 +4,14 @@ import NavbarGeneral from "../../components/Navbar/NavbarGeneral";
 import Rating from "react-rating";
 
 const AddProduct = () => {
-  const [type, setType] = useState(null);
+  const [brand, setBrand] = useState(null);
   const [rating, setRating] = useState(5);
   const handleAddProduct = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const photo = form.photo.value;
-    const brand = form.brand.value;
+    const type = form.type.value;
     const price = form.price.value;
     const description = form.description.value;
     const product = { name, photo, brand, price, type, description, rating };
@@ -27,8 +27,8 @@ const AddProduct = () => {
         console.log(data);
       });
   };
-  const handleTypeChange = (e) => {
-    setType(e.target.value);
+  const handleBrand = (e) => {
+    setBrand(e.target.value);
   };
   return (
     <div>
@@ -79,7 +79,7 @@ const AddProduct = () => {
             </label>
             <input
               type="text"
-              name="brand"
+              name="type"
               id="brand"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white mb-8 md:mb-0"
               placeholder="supercar"
@@ -90,7 +90,7 @@ const AddProduct = () => {
             Brand
           </label>
           <select
-            onChange={handleTypeChange}
+            onChange={handleBrand}
             defaultValue={"DEFAULT"}
             className="select select-ghost w-full max-w-xs"
           >
