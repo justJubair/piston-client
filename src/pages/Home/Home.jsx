@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Brands from "../../components/Brands/Brands";
 import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
 import Footer from "../../components/Footer/Footer";
+import FeaturedListings from "../../components/FeaturedListings/FeaturedListings";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -21,6 +22,7 @@ const Home = () => {
       <Banner />
 
      <Brands brands={brands}/>
+     <FeaturedListings/>
      <WhyChooseUs/>
      <Footer/>
     </div>

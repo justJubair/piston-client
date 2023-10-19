@@ -6,11 +6,12 @@ const WhyChooseUs = () => {
       <h2
       data-aos="fade-up"
       data-aos-duration="2000"
-      className="text-center mb-10 mt-16 md:mt-28 text-4xl font-bold"
+      className="text-center mb-4 mt-16 md:mt-28 text-4xl font-bold"
     >
-      Why <span className="text-orange-800">choose</span> us?
+      Why <span className="text-orange-800">Choose</span> Us?
     </h2>
-    <div className="max-w-screen-lg mx-auto gap-10 lg:gap-20 flex flex-col lg:flex-row">
+    <hr className="w-1/3 mx-auto border-b-2"/>
+    <div className="max-w-screen-lg mt-12 mx-auto gap-10 lg:gap-20 flex flex-col lg:flex-row">
         <div className="flex flex-col items-center">
             <span><LuBadgeCheck size={60} className="text-orange-600"/></span>
             <h3 className="text-xl font-bold text-gray-500 my-4">Wide range of brands</h3>
