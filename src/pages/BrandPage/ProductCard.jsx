@@ -34,11 +34,11 @@ const ProductCard = ({ product }) => {
         </p>
         <div className="card-actions justify-end">
           <Link to={`/detailsPage/${product._id}`} state={product.brand}>
-            <button className="btn bg-orange-800 text-white">Details</button>
+            <button className="btn bg-orange-800 text-white hover:text-black">Details</button>
           </Link>
           <Link
             to={`/updateProduct/${product._id}`}
-            className="btn bg-orange-800 text-white"
+            className="btn bg-orange-800 text-white hover:text-black"
           >
             Update
           </Link>

@@ -50,7 +50,7 @@ const DetailsPage = () => {
         />
           <p className="font-medium text-gray-500">Manufacture Year : {product?.manufacture_year}</p>
           <div className="card-actions justify-end">
-            <button onClick={handleAddToCart} className="btn bg-orange-800 text-white">
+            <button onClick={handleAddToCart} className="btn bg-orange-800 text-white hover:text-black">
               Add to cart
             </button>
           </div>

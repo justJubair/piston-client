@@ -77,7 +77,7 @@ const MyCartCard = ({ product, products, setProducts }) => {
             <button onClick={() => handleDelete(product._id)}>
               <AiOutlineDelete className="text-orange-800 text-2xl duration-300 hover:text-3xl" />
             </button>
-            <Link>
+            <Link to="/">
               <AiOutlineHome className="text-orange-800 text-2xl duration-300 hover:text-3xl" />
             </Link>
           </div>

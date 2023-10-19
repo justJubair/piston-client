@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth"
 import toast from "react-hot-toast"
 import { updateProfile } from "firebase/auth"
 import auth from "../../firebase/firebase.config"
+import SocialLogin from "../../components/SocialLogin/SocialLogin"
 
 const Register = () => {
     const {createUser} = useAuth()
@@ -147,6 +148,7 @@ const Register = () => {
               </Link>
             </div>
           </form>
+          <SocialLogin/>
         </div>
       </div>
     </div>

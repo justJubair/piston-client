@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import NavbarGeneral from "../../components/Navbar/NavbarGeneral";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const {loginUser} = useAuth()
@@ -103,6 +104,7 @@ const Login = () => {
               </Link>
             </div>
           </form>
+          <SocialLogin/>
         </div>
       </div>
     </div>
