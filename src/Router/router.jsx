@@ -6,6 +6,7 @@ import MyCart from "../pages/MyCart/MyCart";
 import BrandPage from "../pages/BrandPage/BrandPage";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
+import NoDataPage from "../pages/BrandPage/NoDataPage";
 
 
 const router = createBrowserRouter([
@@ -44,8 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/ferrari",
-        loader: () => fetch("http://localhost:5000/ferrari"),
-        element: <BrandPage />,
+        element: <NoDataPage />,
       },
       {
         path: "/bmw",
