@@ -8,6 +8,7 @@ import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 import NoDataPage from "../pages/BrandPage/NoDataPage";
 import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login/>
+      },
+      {
+        path: "/register",
+        element: <Register/>
       }
     ],
   },
