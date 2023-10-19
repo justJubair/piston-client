@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Brands from "../../components/Brands/Brands";
 import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -21,6 +22,7 @@ const Home = () => {
 
      <Brands brands={brands}/>
      <WhyChooseUs/>
+     <Footer/>
     </div>
   );
 };
