@@ -9,6 +9,7 @@ import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 import NoDataPage from "../pages/BrandPage/NoDataPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./privateRoute";
 
 
 const router = createBrowserRouter([
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         loader: ()=> fetch("http://localhost:5000/cart"),
-        element: <MyCart />,
+        element: <PrivateRoute><MyCart /></PrivateRoute>
       },
       {
         path: "/tesla",
