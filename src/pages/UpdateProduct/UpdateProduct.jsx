@@ -1,13 +1,14 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import NavbarGeneral from "../../components/Navbar/NavbarGeneral";
 import { useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 
 const UpdateProduct = () => {
     const product = useLoaderData();
+    const navigate = useNavigate()
     const { _id,brand, description, img, name, price, rating, type} = product
     const [newBrand, setNewBrand] = useState(brand)
     const [newRating, setNewRating] = useState(rating)
@@ -32,11 +33,8 @@ const UpdateProduct = () => {
         .then(res=>res.json())
         .then(data=>{
           if(data.modifiedCount > 0){
-            Swal.fire(
-              'Done!',
-              'Product updated successfully!',
-              'success'
-            )
+           toast.success("'Product updated successfully!',")
+            navigate("/")
           }
         })
     }

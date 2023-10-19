@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import NavbarGeneral from "../../components/Navbar/NavbarGeneral";
 import Rating from "react-rating";
+import toast from "react-hot-toast";
 
 const AddProduct = () => {
   const [brand, setBrand] = useState(null);
@@ -14,7 +15,7 @@ const AddProduct = () => {
     const type = form.type.value;
     const price = form.price.value;
     const description = form.description.value;
-    const product = { name, photo, brand, price, type, description, rating };
+    const product = { img:photo, name, brand, price, type, description, rating };
     fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
@@ -24,7 +25,10 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if(data.insertedId){
+          toast.success("Successfully product added")
+          form.reset()
+        }
       });
   };
   const handleBrand = (e) => {

@@ -18,7 +18,7 @@ const FeaturedListings = () => {
       <h2
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="text-center mb-4 mt-16 md:mt-28 text-4xl font-bold"
+      className="text-center mb-4 mt-24 text-4xl font-bold"
     >
       Featured <span className="text-orange-800">Listings</span>
     </h2>
