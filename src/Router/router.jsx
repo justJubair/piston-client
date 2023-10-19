@@ -7,12 +7,14 @@ import BrandPage from "../pages/BrandPage/BrandPage";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 import NoDataPage from "../pages/BrandPage/NoDataPage";
+import Login from "../pages/Login/Login";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <NoDataPage/>,
     children: [
       {
         path: "/",
@@ -66,6 +68,10 @@ const router = createBrowserRouter([
         path: "/updateProduct/:id",
         loader: ({params})=> fetch(`http://localhost:5000/products/${params.id}`),
         element: <UpdateProduct/>
+      },
+      {
+        path: "/login",
+        element: <Login/>
       }
     ],
   },

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import logo from "../../assets/logo-transparent-png.png"
 
 const NavbarGeneral = () => {
@@ -52,12 +52,12 @@ const NavbarGeneral = () => {
    
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 ">
+    <ul className="menu menu-horizontal space-x-4 px-1 ">
      {navLinks}
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn btn-sm md:bg-orange-800 md:text-white md:btn">Login</a>
+    <Link to="/login" className="btn btn-sm md:bg-orange-800 md:text-white md:btn hover:text-black">Login</Link>
   </div>
 </div>
   )
