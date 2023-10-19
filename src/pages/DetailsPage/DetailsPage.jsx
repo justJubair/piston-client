@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import NavbarGeneral from "../../components/Navbar/NavbarGeneral";
+import Rating from "react-rating";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 const DetailsPage = () => {
   const product = useLoaderData();
   const {brand, description, img, manufacture_year, name, price, rating, type} = product
@@ -29,15 +31,24 @@ const DetailsPage = () => {
     })
   }
   return (
-    <div className="max-w-screen-lg mx-auto px-4">
-      <div className="card w-full lg:w-1/2 mx-auto">
+   <>
+   <NavbarGeneral/>
+    <div className="max-w-screen-xl mx-auto px-4 my-8">
+      <div className="card w-full lg:w-9/12 mx-auto">
         <figure>
-          <img src={product?.img} alt="car!" />
+          <img src={product?.img} className="object-cover" alt="car!" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{product?.name}</h2>
-          <p>{product?.description}</p>
-          <p>Manufacture Year : {product?.manufacture_year}</p>
+          <p >{product?.description}</p>
+          <p className="font-medium text-gray-500">Price: ${product?.price}</p>
+          <Rating
+          emptySymbol={<AiOutlineStar size={20}/>}
+          fullSymbol={<AiFillStar size={20} className="text-orange-800"/>}
+          initialRating={product.rating}
+          readonly
+        />
+          <p className="font-medium text-gray-500">Manufacture Year : {product?.manufacture_year}</p>
           <div className="card-actions justify-end">
             <button onClick={handleAddToCart} className="btn bg-orange-800 text-white">
               Add to cart
@@ -46,6 +57,7 @@ const DetailsPage = () => {
         </div>
       </div>
     </div>
+   </>
   );
 };
 

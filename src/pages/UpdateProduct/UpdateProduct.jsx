@@ -3,14 +3,15 @@ import NavbarGeneral from "../../components/Navbar/NavbarGeneral";
 import { useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
+import Swal from "sweetalert2";
 
 
 const UpdateProduct = () => {
     const product = useLoaderData();
-    const {brand, description, img, name, price, rating, type} = product
+    const { _id,brand, description, img, name, price, rating, type} = product
     const [newBrand, setNewBrand] = useState(brand)
-    const [newRating, setNewRating] = useState(null)
-  
+    const [newRating, setNewRating] = useState(rating)
+
     const handleUpdateProduct = e=>{
         e.preventDefault()
         const form = e.target;
@@ -21,7 +22,23 @@ const UpdateProduct = () => {
         const description = form.description.value;
         const updatedProduct = { name, photo, type, price, newBrand, description, newRating };
 
-        console.log(updatedProduct)
+       fetch(`http://localhost:5000/products/${_id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(updatedProduct)
+       })
+        .then(res=>res.json())
+        .then(data=>{
+          if(data.modifiedCount > 0){
+            Swal.fire(
+              'Done!',
+              'Product updated successfully!',
+              'success'
+            )
+          }
+        })
     }
     
 
