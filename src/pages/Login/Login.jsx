@@ -1,13 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavbarGeneral from "../../components/Navbar/NavbarGeneral";
+import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const {loginUser} = useAuth()
+  const navigate = useNavigate()
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    loginUser(email, password)
+    .then(() =>{
+      toast.success("Logged in")
+      navigate("/")
+     
+    })
+    .catch(error=>{
+      toast.error(error.message)
+    })
+
+  };
   return (
     <div>
       <NavbarGeneral />
       <div className="flex justify-center my-9">
         <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-          <form className="space-y-6" action="#">
+          <form onSubmit={handleLogin} className="space-y-6" action="#">
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">
               Sign in to our platform
             </h5>
@@ -51,7 +71,6 @@ const Login = () => {
                     type="checkbox"
                     value=""
                     className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                   
                   />
                 </div>
                 <label
@@ -76,7 +95,8 @@ const Login = () => {
             </button>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
               Not registered?{" "}
-              <Link to="/register"
+              <Link
+                to="/register"
                 className="text-orange-800 hover:underline dark:text-blue-500"
               >
                 Create account

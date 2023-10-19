@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom"
 import NavbarGeneral from "../../components/Navbar/NavbarGeneral"
 import useAuth from "../../hooks/useAuth"
 import toast from "react-hot-toast"
+import { updateProfile } from "firebase/auth"
+import auth from "../../firebase/firebase.config"
 
 const Register = () => {
     const {createUser} = useAuth()
@@ -25,6 +27,10 @@ const Register = () => {
         createUser(email, password)
         .then(()=>{
             toast.success('Registered Successfully!')
+            updateProfile(auth.currentUser, {
+                displayName: name, photoURL: photo
+            })
+           
             navigate("/")
         })
         .catch(error=>{
