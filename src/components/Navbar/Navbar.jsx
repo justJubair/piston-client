@@ -102,7 +102,10 @@ const Navbar = () => {
         }
        
       </div>
-      <input onClick={()=> setTheme(!theme)} type="checkbox" className="toggle"  />
+      <div className="flex flex-col ml-6">
+      <input onClick={()=> setTheme(!theme)} type="checkbox" className="toggle bg-orange-800"  />
+      <span className="text-white">{theme ? "Dark" : "Light"}</span>
+      </div>
     </div>
   );
 };
