@@ -23,7 +23,7 @@ const UpdateProduct = () => {
         const description = form.description.value;
         const updatedProduct = { name, photo, type, price, newBrand, description, newRating };
 
-       fetch(`http://localhost:5000/products/${_id}`, {
+       fetch(`https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/products/${_id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json"

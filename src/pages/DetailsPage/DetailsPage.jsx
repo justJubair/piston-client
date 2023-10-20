@@ -10,7 +10,7 @@ const DetailsPage = () => {
     brand, description, img, manufacture_year, name, price, rating, type
   }
   const handleAddToCart = ()=>{
-    fetch("http://localhost:5000/cart", {
+    fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json"

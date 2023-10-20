@@ -24,7 +24,7 @@ const MyCartCard = ({ product, products, setProducts }) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/cart/${_id}`, {
+          fetch(`https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/cart/${_id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

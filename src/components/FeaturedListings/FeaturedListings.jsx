@@ -8,7 +8,7 @@ const FeaturedListings = () => {
     const [data, setData] = useState([])
    useEffect(()=>{
     const loadData = async()=>{
-        const res = await fetch("http://localhost:5000/products")
+        const res = await fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/products")
         const loadedData = await res.json()
         setData(loadedData)
     }

@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("http://localhost:5000/brands"),
+        loader: () => fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/brands"),
         element: <Home />,
       },
       {
@@ -29,22 +29,22 @@ const router = createBrowserRouter([
       },
       {
         path: "/myCart",
-        loader: ()=> fetch("http://localhost:5000/cart"),
+        loader: ()=> fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/cart"),
         element: <PrivateRoute><MyCart /></PrivateRoute>
       },
       {
         path: "/tesla",
-        loader: () => fetch("http://localhost:5000/tesla"),
+        loader: () => fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/tesla"),
         element: <BrandPage />,
       },
       {
         path: "/mclaren",
-        loader: () => fetch("http://localhost:5000/mclaren"),
+        loader: () => fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/mclaren"),
         element: <BrandPage />,
       },
       {
         path: "/lamborghini",
-        loader: () => fetch("http://localhost:5000/lamborghini"),
+        loader: () => fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/lamborghini"),
         element: <BrandPage />,
       },
       {
@@ -53,22 +53,22 @@ const router = createBrowserRouter([
       },
       {
         path: "/bmw",
-        loader: () => fetch("http://localhost:5000/bmw"),
+        loader: () => fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/bmw"),
         element: <BrandPage />,
       },
       {
         path: "/mercedes",
-        loader: () => fetch("http://localhost:5000/marcedes"),
+        loader: () => fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/marcedes"),
         element: <BrandPage />,
       },
       {
         path: "/detailsPage/:id",
-        loader: ({params})=> fetch(`http://localhost:5000/products/${params.id}`),
+        loader: ({params})=> fetch(`https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/products/${params.id}`),
         element: <PrivateRoute><DetailsPage/></PrivateRoute>
       },
       {
         path: "/updateProduct/:id",
-        loader: ({params})=> fetch(`http://localhost:5000/products/${params.id}`),
+        loader: ({params})=> fetch(`https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/products/${params.id}`),
         element: <PrivateRoute><UpdateProduct/></PrivateRoute>
       },
       {

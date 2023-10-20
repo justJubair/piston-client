@@ -16,7 +16,7 @@ const AddProduct = () => {
     const price = form.price.value;
     const description = form.description.value;
     const product = { img:photo, name, brand, price, type, description, rating };
-    fetch("http://localhost:5000/products", {
+    fetch("https://piston-server-gh0fdb7cb-jubair-ahmeds-projects.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
