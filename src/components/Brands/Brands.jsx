@@ -1,15 +1,17 @@
 import PropTypes from "prop-types"
 import BrandCard from "../BrandCard/BrandCard"
+import useTheme from "../../hooks/useTheme"
 
 
 const Brands = ({brands}) => {
+  const {theme} = useTheme()
   return (
     <div className="px-4 mb-7">
     {/* section title */}
     <h2
       data-aos="fade-up"
       data-aos-duration="2000"
-      className="text-center mb-4 mt-24 text-4xl font-bold"
+      className={`${theme && "text-white"} text-center mb-4 mt-24 text-4xl font-bold`}
     >
       Our <span className="text-orange-800">Associated</span> Brands
     </h2>

@@ -1,8 +1,10 @@
 import logo2 from "../../assets/logo-general.png"
+import useTheme from "../../hooks/useTheme"
 
 const Footer = () => {
+  const {theme} = useTheme()
   return (
-    <footer className="footer p-10 bg-base-200 text-base-content">
+    <footer className={`${theme ? "bg-black" : "bg-base-200"} footer p-10 ${theme ? "text-white" : "text-gray-600"}`}>
   <aside>
    <img className="w-24" src={logo2} alt="" />
     <p>Piston<br/>Providing reliable cars since 2023</p>

@@ -1,8 +1,10 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import FeaturedCard from "./FeaturedCard"
+import useTheme from "../../hooks/useTheme"
 
 const FeaturedListings = () => {
+  const {theme} = useTheme()
     const [data, setData] = useState([])
    useEffect(()=>{
     const loadData = async()=>{
@@ -18,7 +20,7 @@ const FeaturedListings = () => {
       <h2
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="text-center mb-4 mt-24 text-4xl font-bold"
+      className={`${theme && "text-white"} text-center mb-4 mt-24 text-4xl font-bold`}
     >
       Featured <span className="text-orange-800">Listings</span>
     </h2>

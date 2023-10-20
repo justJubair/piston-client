@@ -2,9 +2,10 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo-transparent-png.png";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
-
+import useTheme from "../../hooks/useTheme";
 const Navbar = () => {
   const {user, logoutUser} = useAuth()
+  const {theme, setTheme} = useTheme()
   const navLinks = (
     <>
       <li>
@@ -101,6 +102,7 @@ const Navbar = () => {
         }
        
       </div>
+      <input onClick={()=> setTheme(!theme)} type="checkbox" className="toggle"  />
     </div>
   );
 };
