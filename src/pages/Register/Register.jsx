@@ -135,14 +135,14 @@ const Register = () => {
             </div>
             <button
               type="submit"
-              className="w-full text-white bg-orange-800 hover:bg-orange-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="w-full text-white bg-orange-800 hover:bg-orange-900 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center "
             >
               Register to your account
             </button>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
               Already have an account?{" "}
               <Link to="/login"
-                className="text-orange-800 hover:underline dark:text-blue-500"
+                className="text-orange-800 hover:underline"
               >
                 Login Now
               </Link>
