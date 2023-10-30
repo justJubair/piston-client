@@ -2,8 +2,14 @@ import PropTypes from "prop-types";
 import {  motion } from "framer-motion";
 
 const FeaturedCard = ({ product, setSelectedId }) => {
+
+  const handleAnimatino = _id=>{
+if(window.innerWidth>768){
+  setSelectedId(_id)
+}
+  }
   return (
-    <motion.div layoutId={product._id} onClick={()=> setSelectedId(product._id)}  data-aos="flip-left" className=" relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+    <motion.div layoutId={product._id} onClick={()=>  handleAnimatino(product._id)}  data-aos="flip-left" className=" relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
       <motion.div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-80 rounded-xl bg-clip-border">
         <motion.img
           src={product.img}

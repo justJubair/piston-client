@@ -39,12 +39,12 @@ const FeaturedListings = () => {
             setSelectedId={setSelectedId}
           />
         ))}
-        <div className=" absolute z-[100] top-1/2 md:top-1/3 md:left-[120px] lg:left-96">
+        <div className="hidden lg:block absolute z-[100] top-1/2 md:top-1/3 md:left-[120px] lg:left-96">
           <AnimatePresence>
             {selectedId && (
               <motion.div layoutId={selectedId}>
                  <motion.button onClick={() => setSelectedId(null)}>
-                <div className="">
+          
                   <motion.div
                     
                   
@@ -69,7 +69,7 @@ const FeaturedListings = () => {
                   </motion.div>
                  
                    
-                </div>
+               
                   </motion.button>
               </motion.div>
             )}
