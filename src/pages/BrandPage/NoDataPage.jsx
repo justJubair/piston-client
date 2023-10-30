@@ -10,7 +10,7 @@ const NoDataPage = () => {
 		Not Data Found
 	</div>
 	<button className="mt-5">
-      <a
+      <Link to="/"
         className="relative inline-block text-sm font-medium text-orange-800 group active:text-orange-500 focus:outline-none focus:ring"
       >
         <span
@@ -18,9 +18,9 @@ const NoDataPage = () => {
         ></span>
 
         <span className="relative block px-8 py-3 bg-[#1A2238] border border-current">
-          <Link to="/">Go Home</Link>
+          Go Home
         </span>
-      </a>
+      </Link>
     </button>
 </main>
   );
